@@ -9,6 +9,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Trebuchet MS","Segoe UI",sans-serif;background:#fff0f4;color:var(--ink);overflow-x:hidden}.root{min-height:100vh;background:linear-gradient(145deg,#fff8f6,#ffe9f0 45%,#fff5ed);position:relative;overflow:hidden}.noise{position:absolute;inset:0;opacity:.18;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:18px 18px}.heart{position:fixed;bottom:-40px;font-size:20px;opacity:0;pointer-events:none;animation:float 7s linear forwards;z-index:3}@keyframes float{0%{transform:translateY(0) scale(.7) rotate(0);opacity:0}10%{opacity:.75}90%{opacity:.45}100%{transform:translateY(-110vh) scale(1.25) rotate(25deg);opacity:0}}
 main{position:relative;z-index:2}.hero{min-height:100vh;display:grid;place-items:center;padding:30px 18px}.envelope-wrap{text-align:center;max-width:680px;width:100%}.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--muted);margin-bottom:12px}.hero h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(42px,9vw,82px);line-height:.95;margin:0 0 18px;color:#633d49}.hero h1 span{color:var(--pink);font-style:italic}.subtitle{font-size:17px;line-height:1.8;color:#87626d;max-width:500px;margin:0 auto 30px}.seal{width:116px;height:116px;border-radius:50%;margin:0 auto 25px;background:linear-gradient(145deg,#ff7f9d,#ffb0c1);box-shadow:0 18px 50px #e75d7c33;display:grid;place-items:center;color:white;font-size:44px;animation:pulse 2.5s ease-in-out infinite}@keyframes pulse{50%{transform:scale(1.06);box-shadow:0 22px 65px #e75d7c4d}}
 .btn{border:0;border-radius:999px;padding:15px 26px;font-size:16px;font-weight:700;cursor:pointer;color:white;background:#633d49;box-shadow:0 12px 28px #633d4933;transition:.25s}.btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px #633d4944}.btn.pink{background:var(--pink)}.hint{font-size:12px;color:#aa858e;margin-top:13px}.section{padding:95px 18px}.inner{max-width:920px;margin:auto}.section-label{text-align:center;color:var(--pink);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}.section h2{font-family:Georgia,serif;text-align:center;font-size:clamp(32px,6vw,52px);font-weight:500;margin:12px 0 38px}.letter-card{background:#fffdfb;border:1px solid #f3d9df;border-radius:28px;padding:clamp(28px,6vw,58px);box-shadow:0 25px 80px #9d607b17;position:relative;transform:rotate(-.5deg)}.letter-card:before{content:"♡";position:absolute;top:18px;right:25px;color:#f3b4c1;font-size:30px}.letter{font-family:Georgia,serif;font-size:20px;line-height:2;color:#694b55}.letter p{margin:0 0 22px}.signature{text-align:right;color:var(--pink);font-style:italic;font-size:22px}.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.reason{padding:28px 22px;border-radius:24px;background:#ffffffaa;border:1px solid #f5dce2;text-align:center;box-shadow:0 14px 35px #b95f7810;transition:.25s}.reason:hover{transform:translateY(-6px) rotate(1deg)}.reason .ico{font-size:35px}.reason h3{margin:14px 0 8px;font-family:Georgia,serif;font-size:21px}.reason p{margin:0;color:#8a6872;line-height:1.7}.timeline{position:relative;max-width:680px;margin:auto}.timeline:before{content:"";position:absolute;left:20px;top:10px;bottom:10px;width:1px;background:#efbdca}.moment{display:grid;grid-template-columns:42px 1fr;gap:18px;margin:0 0 25px}.dot{width:14px;height:14px;margin:7px 0 0 14px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 7px #ffdbe4}.moment-card{background:#fff;border-radius:20px;padding:20px 22px;border:1px solid #f4dde2}.moment-card b{font-family:Georgia,serif;font-size:20px}.moment-card p{margin:7px 0 0;color:#896a73;line-height:1.6}.final{min-height:85vh;display:grid;place-items:center;text-align:center;padding:80px 18px}.final-box{max-width:720px}.big-heart{font-size:72px;filter:drop-shadow(0 14px 20px #e65b7a33);animation:pulse 2.2s infinite}.final h2{font-family:Georgia,serif;font-size:clamp(38px,8vw,68px);font-weight:500;margin:15px 0}.final p{font-size:18px;line-height:1.9;color:#86646e}.secret{display:none;margin-top:28px;padding:24px;border-radius:24px;background:#fff;border:1px solid #f1d6dd;animation:rise .7s ease}.secret.show{display:block}@keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}footer{text-align:center;padding:28px;color:#a98690;font-size:12px}.spark{position:absolute;width:5px;height:5px;background:#fff;border-radius:50%;animation:twinkle 2s infinite}@keyframes twinkle{50%{opacity:.2;transform:scale(.4)}}
+.bouquet{display:block;width:clamp(190px,55vw,290px);max-width:100%;height:auto;margin:8px auto 20px}
 @media(max-width:700px){.reasons{grid-template-columns:1fr}.section{padding:72px 16px}.letter{font-size:18px}.hero{padding-top:60px}}
 </style>
 </head>
@@ -27,7 +28,36 @@ main{position:relative;z-index:2}.hero{min-height:100vh;display:grid;place-items
   </div>
 </section>
 <section class="final page-hidden" id="surprisePage" data-page-section="surprise">
-  <div class="final-box"><div class="big-heart">💗</div><div class="section-label">a little surprise</div><h2>เซอร์ไพรส์สำหรับคุณ</h2><p>ในที่สุดคุณก็มาถึงหน้านี้แล้ว<br>มีบางอย่างเล็ก ๆ ที่ฉันอยากบอกคุณด้วยตัวเอง</p><button class="btn pink" id="secretBtn">กดเปิดดูนะ ♡</button><div class="secret" id="secret">ถึงคนพิเศษของฉัน,<br><br>ขอบคุณที่เข้ามาทำให้วันธรรมดา ๆ มีความหมายมากขึ้น<br><strong>คุณพิเศษสำหรับฉันจริง ๆ และฉันดีใจที่มีคุณอยู่ในเรื่องราวของฉัน 💕</strong><br><br>จากคนที่ตั้งใจทำหน้านี้ให้คุณ ♡</div></div>
+  <div class="final-box"><div class="big-heart">💗</div><div class="section-label">a little surprise</div><h2>เซอร์ไพรส์สำหรับคุณ</h2><p>ในที่สุดคุณก็มาถึงหน้านี้แล้ว<br>มีบางอย่างเล็ก ๆ ที่ฉันอยากบอกคุณด้วยตัวเอง</p><svg class="bouquet" viewBox="0 0 320 230" role="img" aria-label="A bouquet of red roses" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="wrap" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffaf5"/><stop offset="1" stop-color="#f3dce1"/></linearGradient>
+      <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f45a70"/><stop offset="1" stop-color="#a91435"/></linearGradient>
+    </defs>
+    <g fill="none" stroke="#668b61" stroke-width="5" stroke-linecap="round">
+      <path d="M88 65c13 47 43 75 72 107M160 43c-4 47-1 88 0 129M232 66c-14 46-42 78-72 106"/>
+    </g>
+    <g fill="#78a36f">
+      <path d="M119 111c-25-23-40-13-40-13 12 25 27 29 40 13ZM139 136c-5-31-24-34-24-34-3 25 6 36 24 34ZM199 111c25-23 40-13 40-13-12 25-27 29-40 13ZM181 138c8-29 27-31 27-31 1 24-9 35-27 31Z"/>
+    </g>
+    <path d="M103 133h114l35 82H68Z" fill="url(#wrap)" stroke="#e9cbd2" stroke-width="2"/>
+    <path d="m103 133 57 82 57-82M160 215v-82" fill="none" stroke="#e9cbd2" stroke-width="2"/>
+    <path d="M142 161c8-8 18-8 26 0l-8 9-18-9Z" fill="#ff9db2"/>
+    <g fill="url(#petal)" stroke="#a91435" stroke-width="1.5">
+      <g transform="translate(88 62)">
+        <ellipse cy="-9" rx="13" ry="20"/><ellipse cx="9" cy="-3" rx="13" ry="20" transform="rotate(72 9 -3)"/><ellipse cx="6" cy="8" rx="13" ry="20" transform="rotate(144 6 8)"/><ellipse cx="-6" cy="8" rx="13" ry="20" transform="rotate(216 -6 8)"/><ellipse cx="-9" cy="-3" rx="13" ry="20" transform="rotate(288 -9 -3)"/>
+        <path d="M-8 1c2-12 17-12 17-2 0 6-7 8-10 4-2-3 1-6 4-4" fill="none" stroke="#ffb1ad" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <g transform="translate(160 40) scale(1.08)">
+        <ellipse cy="-9" rx="13" ry="20"/><ellipse cx="9" cy="-3" rx="13" ry="20" transform="rotate(72 9 -3)"/><ellipse cx="6" cy="8" rx="13" ry="20" transform="rotate(144 6 8)"/><ellipse cx="-6" cy="8" rx="13" ry="20" transform="rotate(216 -6 8)"/><ellipse cx="-9" cy="-3" rx="13" ry="20" transform="rotate(288 -9 -3)"/>
+        <path d="M-8 1c2-12 17-12 17-2 0 6-7 8-10 4-2-3 1-6 4-4" fill="none" stroke="#ffb1ad" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <g transform="translate(232 62)">
+        <ellipse cy="-9" rx="13" ry="20"/><ellipse cx="9" cy="-3" rx="13" ry="20" transform="rotate(72 9 -3)"/><ellipse cx="6" cy="8" rx="13" ry="20" transform="rotate(144 6 8)"/><ellipse cx="-6" cy="8" rx="13" ry="20" transform="rotate(216 -6 8)"/><ellipse cx="-9" cy="-3" rx="13" ry="20" transform="rotate(288 -9 -3)"/>
+        <path d="M-8 1c2-12 17-12 17-2 0 6-7 8-10 4-2-3 1-6 4-4" fill="none" stroke="#ffb1ad" stroke-width="3" stroke-linecap="round"/>
+      </g>
+    </g>
+    <path d="M142 161c4 11 12 15 18 15s14-4 18-15l-10 4-8-5-8 5Z" fill="#ff6f91"/>
+  </svg><button class="btn pink" id="secretBtn">กดเปิดดูนะ ♡</button><div class="secret" id="secret">ถึงคนพิเศษของฉัน,<br><br>ขอบคุณที่เข้ามาทำให้วันธรรมดา ๆ มีความหมายมากขึ้น<br><strong>คุณพิเศษสำหรับฉันจริง ๆ และฉันดีใจที่มีคุณอยู่ในเรื่องราวของฉัน 💕</strong><br><br>จากคนที่ตั้งใจทำหน้านี้ให้คุณ ♡</div></div>
 </section>
 </main><footer>made especially for someone special · with ♡</footer>
 </div>
