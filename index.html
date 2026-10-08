@@ -72,7 +72,7 @@ footer{position:relative;z-index:2;padding:18px calc(14px + var(--safe-right)) c
     <h2>เซอร์ไพรส์สำหรับคุณ</h2>
     <p>ในที่สุดก็ถึงตรงนี้แล้ว ขอบคุณที่เข้ามาอ่านข้อความนี้นะ</p>
   </div>
-  <div class="sticker-gallery">
+  <div class="sticker-gallery" id="stickerGallery">
     <figure class="sticker" tabindex="0"><div class="sticker-cut"><img src="images1.jpg" alt="sticker 1"></div></figure>
     <figure class="sticker" tabindex="0"><div class="sticker-cut"><img src="Image2.jpg" alt="sticker 2"></div></figure>
     <figure class="sticker" tabindex="0"><div class="sticker-cut"><img src="images3.jpg" alt="sticker 3"></div></figure>
@@ -82,7 +82,7 @@ footer{position:relative;z-index:2;padding:18px calc(14px + var(--safe-right)) c
 </section>
 </main><footer>made especially for someone special · with ♡</footer>
 </div>
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="ดูรูปขยาย"><button class="lightbox-close" id="lightboxClose" aria-label="ปิด">✕</button><img class="lightbox-img" id="lightboxImg" alt=""></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="ดูรูปขยาย"><button class="lightbox-close" id="lightboxClose" aria-label="ปิด">✕</button><img class="lightbox-img" id="lightboxImg" alt=""><div class="lightbox-nav" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none;padding:0 10px;"><button id="prevImg" class="lightbox-close" style="position:static;pointer-events:auto">‹</button><button id="nextImg" class="lightbox-close" style="position:static;pointer-events:auto">›</button></div></div>
 <script>
 const root=document.getElementById('top');
 function heart(){const h=document.createElement('div');h.className='heart';h.textContent=['♡','♥','💗','✦'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(14+Math.random()*26)+'px';h.style.animationDuration=(5+Math.random()*5)+'s';root.appendChild(h);setTimeout(()=>h.remove(),11000)}
@@ -94,13 +94,18 @@ document.getElementById('secretBtn').addEventListener('click',()=>{softSound();d
 for(let i=0;i<14;i++){const s=document.createElement('i');s.className='spark';s.style.left=Math.random()*100+'%';s.style.top=(10+Math.random()*80)+'%';s.style.animationDelay=Math.random()*2+'s';root.appendChild(s)}
 </script>
 <script>
-(function(){const lb=document.getElementById('lightbox'),li=document.getElementById('lightboxImg');
-function close(){lb.classList.remove('open')}
-document.querySelectorAll('.sticker').forEach(st=>{const open=()=>{const im=st.querySelector('img');li.src=im.currentSrc||im.src;li.alt=im.alt;lb.classList.add('open');st.classList.add('pop');softSound()};
-st.addEventListener('click',open);st.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
-document.getElementById('lightboxClose').addEventListener('click',close);
-lb.addEventListener('click',e=>{if(e.target!==li)close()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+(function(){
+  const lb=document.getElementById('lightbox'),li=document.getElementById('lightboxImg');
+  const imgs=Array.from(document.querySelectorAll('.sticker img'));
+  let index=0;
+  function openAt(i){index=(i+imgs.length)%imgs.length;const im=imgs[index];li.src=im.currentSrc||im.src;li.alt=im.alt;lb.classList.add('open')}
+  function close(){lb.classList.remove('open')}
+  document.querySelectorAll('.sticker').forEach((st,i)=>{const open=()=>{openAt(i);st.classList.add('pop');softSound();for(let j=0;j<6;j++)setTimeout(heart,j*80);setTimeout(()=>st.classList.remove('pop'),450)};st.addEventListener('click',open);st.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
+  document.getElementById('lightboxClose').addEventListener('click',close);
+  document.getElementById('prevImg').addEventListener('click',e=>{e.stopPropagation();openAt(index-1)});
+  document.getElementById('nextImg').addEventListener('click',e=>{e.stopPropagation();openAt(index+1)});
+  lb.addEventListener('click',e=>{if(e.target!==li)close()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();if(lb.classList.contains('open')&&(e.key==='ArrowLeft'))openAt(index-1);if(lb.classList.contains('open')&&(e.key==='ArrowRight'))openAt(index+1)});
 })();
 </script>
 
