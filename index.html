@@ -12,15 +12,16 @@
 *{box-sizing:border-box}button,input,textarea,select{font-family:inherit}h1,h2,h3{line-height:1.3}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font);background:#fff0f4;color:var(--ink);overflow-x:hidden}
 .root{position:relative;min-height:100vh;overflow:hidden}.noise{position:fixed;inset:0;pointer-events:none;opacity:.09;background-image:radial-gradient(circle at 20% 20%, #fff 0 1px, transparent 1px),radial-gradient(circle at 80% 30%, #fff 0 1px, transparent 1px),radial-gradient(circle at 40% 70%, #fff 0 1px, transparent 1px),radial-gradient(circle at 60% 90%, #fff 0 1px, transparent 1px);background-size:140px 140px;z-index:1}
 main{position:relative;z-index:2}.hero{min-height:100vh;display:grid;place-items:center;padding:30px 18px}.envelope-wrap{text-align:center;max-width:680px;width:100%}.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--muted)}
-.seal{width:88px;height:88px;margin:18px auto 20px;border-radius:50%;display:grid;place-items:center;font-size:34px;background:linear-gradient(145deg,#fff, #ffdbe4);box-shadow:0 10px 24px rgba(90,59,69,.12)}
+.seal{width:88px;height:88px;margin:18px auto 20px;border-radius:50%;display:grid;place-items:center;font-size:34px;background:linear-gradient(145deg,#fff,#ffdbe4);box-shadow:0 10px 24px rgba(90,59,69,.12)}
 h1{font-size:clamp(40px,7vw,72px);margin:0;color:var(--ink)}h1 span{color:var(--pink)}.subtitle{font-size:clamp(16px,2.4vw,20px);line-height:1.8;color:#7b5a65;max-width:54ch;margin:18px auto 28px}.hint{margin-top:16px;color:var(--muted);font-size:14px}
-.btn{border:0;border-radius:999px;padding:15px 26px;font-size:16px;font-weight:700;cursor:pointer;color:white;background:#633d49;box-shadow:0 12px 28px #633d4933;transition:.25s}.btn:hover{transform:translateY(-2px)}
+.btn{border:0;border-radius:999px;padding:15px 26px;font-size:16px;font-weight:700;cursor:pointer;color:#fff;background:#633d49;box-shadow:0 12px 28px #633d4933;transition:.25s}.btn:hover{transform:translateY(-2px)}
 .section{padding:90px 18px}.final{min-height:100vh;display:grid;align-content:center;gap:24px}.final-box{text-align:center;max-width:760px;margin:0 auto}.big-heart{font-size:72px;line-height:1;margin-bottom:8px;animation:none!important;transform:none!important}
 .section-label{display:inline-block;padding:8px 16px;border-radius:999px;background:#fff;color:var(--pink);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12px}.final h2{font-size:clamp(32px,5vw,54px);margin:14px 0 10px}.final p{max-width:48ch;margin:0 auto;color:#73535f;font-size:18px;line-height:1.9}
-@media(max-width:700px){.reasons{grid-template-columns:1fr}.section{padding:72px 16px}.letter{font-size:18px}.hero{padding-top:60px}}
+footer{position:relative;z-index:2;padding:18px 14px 26px;text-align:center;color:var(--muted);font-size:14px}
+@media(max-width:700px){.section{padding:72px 16px}.hero{padding-top:60px}.final p{font-size:16px}.big-heart{font-size:58px}}
 </style>
 <style>
-.sticker-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:22px 16px;max-width:640px;margin:24px auto;padding:0 8px}
+.sticker-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:22px 16px;max-width:640px;margin:24px auto 0;padding:0 8px}
 .sticker{margin:0;filter:drop-shadow(0 10px 14px rgba(90,59,69,.22));transform:rotate(var(--rot,-3deg));transition:transform .3s cubic-bezier(.3,1.6,.5,1);cursor:pointer;-webkit-tap-highlight-color:transparent}
 .sticker:nth-child(1){--rot:-4deg}.sticker:nth-child(2){--rot:3deg}.sticker:nth-child(3){--rot:-2deg}
 .sticker:hover,.sticker.pop{transform:rotate(0) scale(1.08)}
@@ -49,7 +50,12 @@ h1{font-size:clamp(40px,7vw,72px);margin:0;color:var(--ink)}h1 span{color:var(--
   </div>
 </section>
 <section class="final page-hidden" id="surprisePage" data-page-section="surprise">
-  <div class="final-box"><div class="big-heart">💗</div><div class="section-label">a little surprise</div><h2>เซอร์ไพรส์สำหรับคุณ</h2><p>ในที่สุดก็ถึงตรงนี้แล้ว ขอบคุณที่เข้ามาอ่านข้อความนี้นะ</p></div>
+  <div class="final-box">
+    <div class="big-heart">💗</div>
+    <div class="section-label">a little surprise</div>
+    <h2>เซอร์ไพรส์สำหรับคุณ</h2>
+    <p>ในที่สุดก็ถึงตรงนี้แล้ว ขอบคุณที่เข้ามาอ่านข้อความนี้นะ</p>
+  </div>
   <div class="sticker-gallery">
     <figure class="sticker" tabindex="0"><div class="sticker-cut"><img src="images1.jpg" alt="sticker 1"></div></figure>
     <figure class="sticker" tabindex="0"><div class="sticker-cut"><img src="Image2.jpg" alt="sticker 2"></div></figure>
