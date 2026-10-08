@@ -84,12 +84,38 @@ footer{position:relative;z-index:2;padding:18px calc(14px + var(--safe-right)) c
   margin:18px auto 0;
 }
 </style>
+<style>
+.hero{position:relative;overflow:hidden}
+.envelope-wrap{position:relative;z-index:1}
+.hero .seal{animation:cuteIn .7s cubic-bezier(.34,1.56,.64,1) both,heartBeat 2.4s ease-in-out .8s infinite}
+.hero h1{animation:cuteIn .7s .15s cubic-bezier(.34,1.56,.64,1) both}
+.hero h1 span{display:inline-block;background:linear-gradient(100deg,var(--pink) 30%,#ffc2d1 50%,var(--pink) 70%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 3.5s linear infinite,bob 3s ease-in-out infinite}
+.hero .subtitle{animation:cuteIn .7s .3s ease-out both}
+.hero .btn{animation:cuteIn .7s .45s cubic-bezier(.34,1.56,.64,1) both,btnGlow 2.8s ease-in-out 1.2s infinite}
+.hero .hint{animation:cuteIn .7s .6s ease-out both,bob 4s ease-in-out 1.3s infinite}
+.cute-deco{position:absolute;z-index:0;pointer-events:none;user-select:none;opacity:.55;animation:floaty 5s ease-in-out infinite;will-change:transform}
+.cute-deco.d1{top:12%;left:9%;font-size:26px}
+.cute-deco.d2{top:18%;right:10%;font-size:22px;animation-delay:-1.5s;animation-duration:6s}
+.cute-deco.d3{bottom:16%;left:12%;font-size:22px;animation-delay:-3s}
+.cute-deco.d4{bottom:20%;right:8%;font-size:28px;animation-delay:-2s;animation-duration:5.5s}
+.cute-deco.d5{top:45%;left:4%;font-size:18px;animation:twinkle 3s ease-in-out infinite}
+.cute-deco.d6{top:40%;right:4%;font-size:18px;animation:twinkle 3.4s ease-in-out -1s infinite}
+@keyframes cuteIn{from{opacity:0;transform:translateY(18px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes heartBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.12)}30%{transform:scale(1)}45%{transform:scale(1.08)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes shimmer{to{background-position:-200% 0}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-14px) rotate(6deg)}}
+@keyframes btnGlow{0%,100%{box-shadow:0 12px 28px #633d4933}50%{box-shadow:0 12px 28px #633d4933,0 0 0 8px rgba(255,111,145,.18)}}
+@media(max-width:430px){.cute-deco.d5,.cute-deco.d6{display:none}.cute-deco{opacity:.4}}
+@media(prefers-reduced-motion:reduce){.hero *{animation:none!important}}
+</style>
 <style>.page-hidden{display:none!important}.next-btn{margin-top:18px}</style>
 </head>
 <body>
 <div class="root" id="top"><div class="noise"></div>
 <main>
 <section class="hero" data-page-section="home">
+  <span class="cute-deco d1" aria-hidden="true">💗</span><span class="cute-deco d2" aria-hidden="true">✨</span><span class="cute-deco d3" aria-hidden="true">🌸</span><span class="cute-deco d4" aria-hidden="true">🎀</span><span class="cute-deco d5" aria-hidden="true">⭐</span><span class="cute-deco d6" aria-hidden="true">🤍</span>
   <div class="envelope-wrap">
     <!--<div class="eyebrow">a tiny website made with a lot of feelings</div>-->
     <div class="seal">♡</div>
