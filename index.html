@@ -28,7 +28,7 @@ footer{position:relative;z-index:2;padding:18px calc(14px + var(--safe-right)) c
 @media(max-width:430px){h1{font-size:clamp(32px,9vw,44px)}.subtitle{line-height:1.75}.seal{margin:14px auto 16px}.hint{font-size:12px}.section-label{font-size:11px;padding:7px 14px}.lightbox{padding:14px}.lightbox-close{top:10px;right:10px;width:42px;height:42px;font-size:20px}}
 </style>
 <style>
-.sticker-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:22px 16px;max-width:640px;margin:24px auto 0;padding:0 8px}
+.sticker-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 16px;max-width:760px;margin:24px auto 0;padding:0 8px}
 .sticker{margin:0;filter:drop-shadow(0 10px 14px rgba(90,59,69,.22));transform:rotate(var(--rot,-3deg));transition:transform .3s cubic-bezier(.3,1.6,.5,1);cursor:pointer;-webkit-tap-highlight-color:transparent}
 .sticker:nth-child(1){--rot:-4deg}.sticker:nth-child(2){--rot:3deg}.sticker:nth-child(3){--rot:-2deg}
 .sticker:hover,.sticker.pop{transform:rotate(0) scale(1.08)}
