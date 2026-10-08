@@ -15,6 +15,20 @@ main{position:relative;z-index:2}.hero{min-height:100vh;display:grid;place-items
 <body>
 <div class="root" id="top"><div class="noise"></div>
 <main>
+<style>
+.sticker-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:22px 16px;max-width:640px;margin:24px auto;padding:0 8px}
+.sticker{margin:0;filter:drop-shadow(0 10px 14px rgba(90,59,69,.22));transform:rotate(var(--rot,-3deg));transition:transform .3s cubic-bezier(.3,1.6,.5,1);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sticker:nth-child(1){--rot:-4deg}.sticker:nth-child(2){--rot:3deg}.sticker:nth-child(3){--rot:-2deg}
+.sticker:hover,.sticker.pop{transform:rotate(0) scale(1.08)}
+.sticker:focus-visible{outline:3px solid var(--pink);outline-offset:4px}
+.sticker-cut{padding:9px;background:#fff;clip-path:polygon(4% 0,12% 3%,20% 0,28% 3%,36% 0,44% 3%,52% 0,60% 3%,68% 0,76% 3%,84% 0,92% 3%,100% 0,97% 8%,100% 16%,97% 24%,100% 32%,97% 40%,100% 48%,97% 56%,100% 64%,97% 72%,100% 80%,97% 88%,100% 100%,92% 97%,84% 100%,76% 97%,68% 100%,60% 97%,52% 100%,44% 97%,36% 100%,28% 97%,20% 100%,12% 97%,4% 100%,0 100%,3% 92%,0 84%,3% 76%,0 68%,3% 60%,0 52%,3% 44%,0 36%,3% 28%,0 20%,3% 12%,0 4%)}
+.sticker-cut img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;background:#ffe3ea}
+.lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(90,40,60,.72);backdrop-filter:blur(4px)}
+.lightbox.open{display:flex}
+.lightbox-img{max-width:92vw;max-height:84vh;border:10px solid #fff;border-radius:22px;background:#fff;box-shadow:0 20px 60px rgba(90,59,69,.5);animation:lbpop .3s cubic-bezier(.3,1.6,.5,1)}
+.lightbox-close{position:absolute;top:14px;right:14px;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:var(--pink);font-size:22px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+@keyframes lbpop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+</style>
 <style>.page-hidden{display:none!important}.next-btn{margin-top:18px}</style>
 <section class="hero" data-page-section="home">
   <div class="envelope-wrap">
@@ -27,10 +41,11 @@ main{position:relative;z-index:2}.hero{min-height:100vh;display:grid;place-items
   </div>
 </section>
 <section class="final page-hidden" id="surprisePage" data-page-section="surprise">
-  <div class="final-box"><div class="big-heart">💗</div><div class="section-label">a little surprise</div><h2>เซอร์ไพรส์สำหรับคุณ</h2><p>ในที่สุดคุณก็มาถึงหน้านี้แล้ว<br>มีบางอย่างเล็ก ๆ ที่ฉันอยากบอกคุณด้วยตัวเอง</p><button class="btn pink" id="secretBtn">กดเปิดดูนะ ♡</button><div class="secret" id="secret">ถึงคนพิเศษของฉัน,<br><br>ขอบคุณที่เข้ามาทำให้วันธรรมดา ๆ มีความหมายมากขึ้น<br><strong>คุณพิเศษสำหรับฉันจริง ๆ และฉันดีใจที่มีคุณอยู่ในเรื่องราวของฉัน 💕</strong><br><br>จากคนที่ตั้งใจทำหน้านี้ให้คุณ ♡</div></div>
+  <div class="final-box"><div class="big-heart">💗</div><div class="section-label">a little surprise</div><h2>เซอร์ไพรส์สำหรับคุณ</h2><p>ในที่สุดคุณก็มาถึงหน้านี้แล้ว<br>มีบางอย่างเล็ก ๆ ที่ฉันอยากบอกคุณด้วยตัวเอง</p><div class="sticker-gallery" id="stickerGallery"><figure class="sticker" tabindex="0" role="button" aria-label="ขยายดูรูปที่ 1"><div class="sticker-cut"><img src="images1.jpg" alt="รูปสติ๊กเกอร์ใบที่ 1" loading="lazy"></div></figure><figure class="sticker" tabindex="0" role="button" aria-label="ขยายดูรูปที่ 2"><div class="sticker-cut"><img src="images2.jpg" alt="รูปสติ๊กเกอร์ใบที่ 2" loading="lazy"></div></figure><figure class="sticker" tabindex="0" role="button" aria-label="ขยายดูรูปที่ 3"><div class="sticker-cut"><img src="image3.jpg" alt="รูปสติ๊กเกอร์ใบที่ 3" loading="lazy"></div></figure></div><button class="btn pink" id="secretBtn">กดเปิดดูนะ ♡</button><div class="secret" id="secret">ถึงคนพิเศษของฉัน,<br><br>ขอบคุณที่เข้ามาทำให้วันธรรมดา ๆ มีความหมายมากขึ้น<br><strong>คุณพิเศษสำหรับฉันจริง ๆ และฉันดีใจที่มีคุณอยู่ในเรื่องราวของฉัน 💕</strong><br><br>จากคนที่ตั้งใจทำหน้านี้ให้คุณ ♡</div></div>
 </section>
 </main><footer>made especially for someone special · with ♡</footer>
 </div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="ดูรูปขยาย"><button class="lightbox-close" id="lightboxClose" aria-label="ปิด">✕</button><img class="lightbox-img" id="lightboxImg" alt=""></div>
 <script>
 const root=document.getElementById('top');
 function heart(){const h=document.createElement('div');h.className='heart';h.textContent=['♡','♥','💗','✦'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(14+Math.random()*22)+'px';h.style.animationDuration=(5+Math.random()*4)+'s';root.appendChild(h);setTimeout(()=>h.remove(),9000)}
@@ -41,4 +56,14 @@ document.getElementById('openBtn').addEventListener('click',()=>{softSound();sho
 document.getElementById('secretBtn').addEventListener('click',()=>{softSound();document.getElementById('secret').classList.toggle('show');for(let i=0;i<12;i++)setTimeout(heart,i*80)});
 for(let i=0;i<14;i++){const s=document.createElement('i');s.className='spark';s.style.left=Math.random()*100+'%';s.style.top=(10+Math.random()*80)+'%';s.style.animationDelay=Math.random()*2+'s';root.appendChild(s)}
 </script>
+<script>
+(function(){const lb=document.getElementById('lightbox'),li=document.getElementById('lightboxImg');
+function close(){lb.classList.remove('open')}
+document.querySelectorAll('.sticker').forEach(st=>{const open=()=>{const im=st.querySelector('img');li.src=im.currentSrc||im.src;li.alt=im.alt;lb.classList.add('open');st.classList.add('pop');softSound();for(let i=0;i<6;i++)setTimeout(heart,i*80);setTimeout(()=>st.classList.remove('pop'),450)};
+st.addEventListener('click',open);st.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
+lb.addEventListener('click',e=>{if(e.target!==li)close()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+})();
+</script>
+
 </body></html>
