@@ -139,6 +139,7 @@ document.getElementById('secretBtn').addEventListener('click',()=>{softSound();d
 for(let i=0;i<14;i++){const s=document.createElement('i');s.className='spark';s.style.left=Math.random()*100+'%';s.style.top=(10+Math.random()*80)+'%';s.style.animationDelay=Math.random()*2+'s';root.appendChild(s)}
 </script>
 <script>
+<script>
 (function(){
   const carousel=document.getElementById('carousel');
   const track=document.getElementById('carouselTrack');
@@ -186,12 +187,18 @@ for(let i=0;i<14;i++){const s=document.createElement('i');s.className='spark';s.
   document.getElementById('prevImg').addEventListener('click',e=>{e.stopPropagation();prev();li.src=imgs[current].currentSrc||imgs[current].src;li.alt=imgs[current].alt});
   document.getElementById('nextImg').addEventListener('click',e=>{e.stopPropagation();next();li.src=imgs[current].currentSrc||imgs[current].src;li.alt=imgs[current].alt});
   lb.addEventListener('click',e=>{if(e.target!==li)close()});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();if(lb.classList.contains('open')&&e.key==='ArrowLeft'){prev();li.src=imgs[current].currentSrc||imgs[current].src;li.alt=imgs[current].alt}if(lb.classList.contains('open')&&e.key==='ArrowRight'){next();li.src=imgs[current].currentSrc||imgs[current].src;li.alt=imgs[current].alt}});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();if(lb.classList.contains('open')&&e.key==='ArrowLeft'){prev();li.src=imgs[current].currentSrc||imgs[current].src;li.alt=imgs[current].alt}});
+
   li.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;swiping=true},{passive:true});
   li.addEventListener('touchend',e=>{if(!swiping)return;const diff=e.changedTouches[0].clientX-startX;swiping=false;if(Math.abs(diff)>50){if(diff<0)next();else prev()}});
 
   updateDots();
+
+  setInterval(() => {
+    next();
+  }, 5000);
 })();
+</script>
 </script>
 
 </body></html>
