@@ -24,7 +24,7 @@ footer{position:relative;z-index:2;padding:18px calc(14px + var(--safe-right)) c
 .heart{position:fixed;top:-40px;z-index:3;pointer-events:none;color:var(--pink);opacity:.75;user-select:none;animation:heartFall linear forwards;will-change:transform}.spark{position:fixed;z-index:1;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px 2px rgba(231,184,106,.7);pointer-events:none;opacity:0;animation:twinkle 2.6s ease-in-out infinite}
 @keyframes heartFall{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.8}100%{transform:translateY(115vh) rotate(40deg);opacity:0}}
 @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1.2)}}
-@media(max-width:700px){.hero{padding-top:calc(28px + var(--safe-top))}.subtitle{margin-bottom:20px}.final p{font-size:16px}.sticker-gallery{grid-template-columns:1fr;max-width:360px;gap:16px}.sticker{transform:none}.sticker:hover,.sticker.pop{transform:scale(1.02)}.btn{max-width:280px}}
+@media(max-width:700px){.hero{padding-top:calc(28px + var(--safe-top))}.subtitle{margin-bottom:20px}.final p{font-size:16px}.btn{max-width:280px}}
 @media(max-width:430px){h1{font-size:clamp(32px,9vw,44px)}.subtitle{line-height:1.75}.seal{margin:14px auto 16px}.hint{font-size:12px}.section-label{font-size:11px;padding:7px 14px}.lightbox{padding:14px}.lightbox-close{top:10px;right:10px;width:42px;height:42px;font-size:20px}}
 </style>
 <style>
@@ -68,6 +68,8 @@ footer{position:relative;z-index:2;padding:18px calc(14px + var(--safe-right)) c
     <figure class="sticker" tabindex="0"><div class="sticker-cut"><img src="Image2.jpg" alt="sticker 2"></div></figure>
     <figure class="sticker" tabindex="0"><div class="sticker-cut"><img src="images3.jpg" alt="sticker 3"></div></figure>
   </div>
+  <button class="btn pink" id="secretBtn">กดเปิดอ่านข้อความ ✨</button>
+  <div class="secret" id="secret">อยากให้รู้ว่าคุณสำคัญมาก ๆ กับเราเสมอ ขอบคุณที่อยู่ตรงนี้นะ 💖</div>
 </section>
 </main><footer>made especially for someone special · with ♡</footer>
 </div>
@@ -79,6 +81,7 @@ setInterval(heart,700);for(let i=0;i<9;i++)setTimeout(heart,i*120);
 function softSound(){try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const c=new C();[523.25,659.25,783.99].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();o.frequency.value=f;o.type='sine';o.connect(g);g.connect(c.destination);g.gain.value=.0001;o.start();g.gain.exponentialRampToValueAtTime(.06,c.currentTime+.02+i*.05);g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+.35+i*.05);o.stop(c.currentTime+.4+i*.05)})}catch(e){}}
 function showPage(id){document.querySelectorAll('[data-page-section]').forEach(p=>p.classList.toggle('page-hidden',p.dataset.pageSection!==id));window.scrollTo(0,0)}
 document.getElementById('openBtn').addEventListener('click',()=>{softSound();showPage('surprise');for(let i=0;i<18;i++)setTimeout(heart,i*70)});
+document.getElementById('secretBtn').addEventListener('click',()=>{softSound();document.getElementById('secret').classList.toggle('show');for(let i=0;i<12;i++)setTimeout(heart,i*80)});
 for(let i=0;i<14;i++){const s=document.createElement('i');s.className='spark';s.style.left=Math.random()*100+'%';s.style.top=(10+Math.random()*80)+'%';s.style.animationDelay=Math.random()*2+'s';root.appendChild(s)}
 </script>
 <script>
