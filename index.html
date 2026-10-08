@@ -2,28 +2,27 @@
 <html lang="th">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <title>A Little Surprise For You</title>
 <style>
 :root{--pink:#ff6f91;--rose:#ff9db2;--cream:#fff8f5;--ink:#5a3b45;--muted:#9b707c;--gold:#e7b86a;--white:#fff;--font:"Mali","Sarabun","Tahoma",sans-serif;}
-*{box-sizing:border-box}button,input,textarea,select{font-family:inherit}h1,h2,h3{line-height:1.3}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font);background:#fff0f4;color:var(--ink);overflow-x:hidden}
+*{box-sizing:border-box}button,input,textarea,select{font-family:inherit}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0;font-family:var(--font);background:#fff0f4;color:var(--ink);overflow-x:hidden;min-width:320px}
+img{max-width:100%;height:auto;display:block}
 .root{position:relative;min-height:100vh;overflow:hidden}.noise{position:fixed;inset:0;pointer-events:none;opacity:.09;background-image:radial-gradient(circle at 20% 20%, #fff 0 1px, transparent 1px),radial-gradient(circle at 80% 30%, #fff 0 1px, transparent 1px),radial-gradient(circle at 40% 70%, #fff 0 1px, transparent 1px),radial-gradient(circle at 60% 90%, #fff 0 1px, transparent 1px);background-size:140px 140px;z-index:1}
-main{position:relative;z-index:2}.hero{min-height:100vh;display:grid;place-items:center;padding:30px 18px}.envelope-wrap{text-align:center;max-width:680px;width:100%}.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--muted)}
-.seal{width:88px;height:88px;margin:18px auto 20px;border-radius:50%;display:grid;place-items:center;font-size:34px;background:linear-gradient(145deg,#fff,#ffdbe4);box-shadow:0 10px 24px rgba(90,59,69,.12)}
-h1{font-size:clamp(40px,7vw,72px);margin:0;color:var(--ink)}h1 span{color:var(--pink)}.subtitle{font-size:clamp(16px,2.4vw,20px);line-height:1.8;color:#7b5a65;max-width:54ch;margin:18px auto 28px}.hint{margin-top:16px;color:var(--muted);font-size:14px}
-.btn{border:0;border-radius:999px;padding:15px 26px;font-size:16px;font-weight:700;cursor:pointer;color:#fff;background:#633d49;box-shadow:0 12px 28px #633d4933;transition:.25s}.btn:hover{transform:translateY(-2px)}
-.section{padding:90px 18px}.final{min-height:100vh;display:grid;align-content:center;gap:24px;padding:60px 18px}.final-box{text-align:center;max-width:760px;margin:0 auto}.big-heart{font-size:72px;line-height:1;margin-bottom:8px;animation:none!important;transform:none!important}
-.section-label{display:inline-block;padding:8px 16px;border-radius:999px;background:#fff;color:var(--pink);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12px}.final h2{font-size:clamp(32px,5vw,54px);margin:14px 0 10px}.final p{max-width:48ch;margin:0 auto;color:#73535f;font-size:18px;line-height:1.9}
-footer{position:relative;z-index:2;padding:18px 14px 26px;text-align:center;color:var(--muted);font-size:14px}
-/* floating hearts & sparkles (created by JS) */
-.heart{position:fixed;top:-40px;z-index:3;pointer-events:none;color:var(--pink);opacity:.75;user-select:none;animation:heartFall linear forwards;will-change:transform}
-.spark{position:fixed;z-index:1;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px 2px rgba(231,184,106,.7);pointer-events:none;opacity:0;animation:twinkle 2.6s ease-in-out infinite}
+main{position:relative;z-index:2}.hero{min-height:100svh;display:grid;place-items:center;padding:clamp(20px,4vw,30px) clamp(16px,4vw,18px)}.envelope-wrap{text-align:center;max-width:min(680px,100%);width:100%}.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:clamp(10px,2.6vw,12px);color:var(--muted)}
+.seal{width:clamp(68px,18vw,88px);height:clamp(68px,18vw,88px);margin:18px auto 20px;border-radius:50%;display:grid;place-items:center;font-size:clamp(28px,7vw,34px);background:linear-gradient(145deg,#fff,#ffdbe4);box-shadow:0 10px 24px rgba(90,59,69,.12)}
+h1{font-size:clamp(34px,8vw,72px);margin:0;color:var(--ink);line-height:1.08}h1 span{color:var(--pink)}.subtitle{font-size:clamp(15px,4vw,20px);line-height:1.8;color:#7b5a65;max-width:54ch;margin:18px auto 24px}.hint{margin-top:14px;color:var(--muted);font-size:clamp(12px,3.2vw,14px)}
+.btn{border:0;border-radius:999px;padding:14px 22px;font-size:clamp(15px,4vw,16px);font-weight:700;cursor:pointer;color:#fff;background:#633d49;box-shadow:0 12px 28px #633d4933;transition:.25s;width:min(100%,320px)}.btn:hover{transform:translateY(-2px)}
+.section{padding:clamp(56px,10vw,90px) 18px}.final{min-height:100svh;display:grid;align-content:center;gap:18px;padding:clamp(40px,8vw,60px) 16px}.final-box{text-align:center;max-width:760px;margin:0 auto}.big-heart{font-size:clamp(52px,14vw,72px);line-height:1;margin-bottom:8px;animation:none!important;transform:none!important}
+.section-label{display:inline-block;padding:8px 16px;border-radius:999px;background:#fff;color:var(--pink);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12px}.final h2{font-size:clamp(28px,7vw,54px);margin:14px 0 10px}.final p{max-width:48ch;margin:0 auto;color:#73535f;font-size:clamp(16px,4vw,18px);line-height:1.9;padding:0 4px}
+footer{position:relative;z-index:2;padding:18px 14px 26px;text-align:center;color:var(--muted);font-size:14px;line-height:1.5}
+.heart{position:fixed;top:-40px;z-index:3;pointer-events:none;color:var(--pink);opacity:.75;user-select:none;animation:heartFall linear forwards;will-change:transform}.spark{position:fixed;z-index:1;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px 2px rgba(231,184,106,.7);pointer-events:none;opacity:0;animation:twinkle 2.6s ease-in-out infinite}
 @keyframes heartFall{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.8}100%{transform:translateY(115vh) rotate(40deg);opacity:0}}
 @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1.2)}}
-@media(max-width:700px){.section{padding:72px 16px}.hero{padding-top:60px}.final p{font-size:16px}.big-heart{font-size:58px}}
+@media(max-width:700px){.hero{padding-top:44px}.subtitle{margin-bottom:20px}.final p{font-size:16px}.sticker-gallery{grid-template-columns:1fr;max-width:360px;gap:16px}.sticker{transform:none}.sticker:hover,.sticker.pop{transform:scale(1.02)}}
 </style>
 <style>
 .sticker-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:22px 16px;max-width:640px;margin:24px auto 0;padding:0 8px}
